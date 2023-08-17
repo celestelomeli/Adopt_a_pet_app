@@ -1,0 +1,26 @@
+<!-- templates/base.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+   
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>My Pet Adoption</header>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/animals/dogs">Dogs</a></li>
+            <li><a href="/animals/cats">Cats</a></li>
+            <li><a href="/animals/rabbits">Rabbits</a></li>
+        </ul>
+    </nav>
+    
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

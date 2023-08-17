@@ -1,0 +1,103 @@
+/* Reset some default styling */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FCCB06;
+}
+
+/* Header styles */
+header {
+    font-size: 30px;
+    font-weight: bold;
+    display: flex;
+    background-color: #EDF7F6;
+    color: #222E50;
+    align-items: left;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 36px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+/* Navigation styles */
+nav {
+    font-size: 20px;
+    background-color: #222E50;
+    color: #fff;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 70px;
+    text-align: right;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Content styles */
+.content {
+    
+    
+    padding: 150px;
+    text-align: center;
+    background-color: #FCCB06;
+   
+}
+
+/* Pet list styles */
+ul.pet-list {
+    list-style-type: none;
+    margin-left: 100px;
+    margin-top: 10px;
+}
+
+/* Pet detail styles */
+h2 {
+    font-size: 36px;
+    margin-top: 30px;
+    color: #333;
+}
+
+.pet-image {
+    max-width: 100%;
+    height: auto;
+    width: 350px;
+    height: 400px;
+    margin-top: 20px;
+    border-radius: 30px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+p.pet-description {
+    font-size: 50px;
+    line-height: 150%;
+    margin-top: 20px;
+    color: #555;
+}
+
+ul.pet-details {
+    font-size: 50px;
+    line-height: 150%;
+    list-style-type: none;
+    margin-top: 20px;
+    padding-left: 0;
+}
+
+ul.pet-details li {
+    margin-bottom: 20px;
+}

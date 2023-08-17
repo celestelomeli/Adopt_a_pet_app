@@ -1,0 +1,37 @@
+{
+    "dogs": [
+      {
+        "name": "Buddy",
+        "image_url": "dog_image_url_1.jpg",
+        "description": "Friendly Labrador Retriever",
+        "breed": "Labrador Retriever",
+        "age": 3
+      },
+      {
+        "name": "Charlie",
+        "image_url": "dog_image_url_2.jpg",
+        "description": "Playful Golden Retriever",
+        "breed": "Golden Retriever",
+        "age": 2
+      }
+    ],
+    "cats": [
+      {
+        "name": "Whiskers",
+        "image_url": "cat_image_url_1.jpg",
+        "description": "Curious and Affectionate",
+        "breed": "Siamese",
+        "age": 1
+      }
+    ],
+    "rabbits": [
+      {
+        "name": "Snowball",
+        "image_url": "rabbit_image_url_1.jpg",
+        "description": "Fluffy and Energetic",
+        "breed": "Dutch",
+        "age": 0.5
+      }
+    ]
+  }
+  
