@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+
+{% block title %}{{ selected_pet['name'] }}{% endblock %}
+    
+
+{% block content %}
+    <h1>{{ selected_pet['name'] }}</h1>
+    <img src="{{ url_for('static', filename='images/' + selected_pet['image_url']) }}" alt="{{ selected_pet['name'] }}" class="pet-image"/>
+    <p>{{ selected_pet['description'] }}</p>
+    <ul>
+        <li>breed: {{ selected_pet['breed'] }}</li>
+        <li>age: {{ selected_pet['age'] }}</li>
+    </ul>
+{% endblock %}
