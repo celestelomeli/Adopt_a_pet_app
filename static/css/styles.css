@@ -1,103 +1,230 @@
-/* Reset some default styling */
-body, h1, h2, h3, p, ul, li {
+/* Reset default browser styles */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
+/* Base styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #FCCB06;
-}
-
-/* Header styles */
-header {
-    font-size: 30px;
-    font-weight: bold;
-    display: flex;
-    background-color: #EDF7F6;
-    color: #222E50;
-    align-items: left;
-    padding: 20px;
-}
-
-h1 {
-    font-size: 36px;
-    margin-top: 30px;
-    margin-bottom: 20px;
-}
-
-/* Navigation styles */
-nav {
-    font-size: 20px;
-    background-color: #222E50;
-    color: #fff;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 70px;
-    text-align: right;
-}
-
-nav ul li {
-    display: inline-block;
-    margin-right: 15px;
-}
-
-nav a {
-    color: #fff;
-    text-decoration: none;
-}
-
-/* Content styles */
-.content {
-    
-    
-    padding: 150px;
-    text-align: center;
-    background-color: #FCCB06;
-   
-}
-
-/* Pet list styles */
-ul.pet-list {
-    list-style-type: none;
-    margin-left: 100px;
-    margin-top: 10px;
-}
-
-/* Pet detail styles */
-h2 {
-    font-size: 36px;
-    margin-top: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f5f5;
     color: #333;
 }
 
-.pet-image {
-    max-width: 100%;
-    height: auto;
-    width: 350px;
-    height: 400px;
-    margin-top: 20px;
-    border-radius: 30px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+/* Flexbox wrapper to keep footer at bottom */
+.page-wrapper {
+    min-height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
 }
 
-p.pet-description {
-    font-size: 50px;
-    line-height: 150%;
-    margin-top: 20px;
+/* Header section */
+header {
+    background: white;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    color: #2c3e50;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+/* Navigation bar */
+nav {
+    background: rgba(255,255,255,0.95);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Navigation links inside nav bar */
+nav ul {
+    list-style: none; /* Remove bullet points */
+    display: flex; /* Horizontal layout */
+    gap: 2rem; /* Space between nav items */
+    justify-content: center; /* Center the nav items */
+}
+
+/* Style for all links (a tags) inside nav */
+nav a {
+    color: #2c3e50;
+    text-decoration: none; /* Remove underline */
+    font-weight: 500;
+    transition: color 0.3s; /* Smooth color change on hover */
+}
+
+nav a:hover {
+    color: #3498db;
+}
+
+/* Main content container */
+.content {
+    max-width: 90%;
+    width: 100%;
+    margin: 2rem auto 1rem;
+    padding: 3rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    flex: 1; /* Pushes footer to bottom */
+}
+
+.content h1 {
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.content p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Grid layout for pet category buttons on homepage */
+.content > ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid: min 250px per column */
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* Individual list items (li) that are pet category buttons */
+.content > ul > li {
+    background: #3498db !important;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s; /* Smooth animations */
+    box-shadow: 0 4px 12px rgba(52,152,219,0.3);
+}
+
+.content > ul > li:hover {
+    transform: translateY(-5px); /* Lift up on hover */
+    box-shadow: 0 8px 20px rgba(52,152,219,0.4); /* Bigger shadow on hover */
+    background: #2980b9 !important;
+}
+
+/* Links (a tags) inside the pet category buttons */
+.content > ul > li > a {
+    display: block; /* Makes entire card clickable */
+    padding: 2rem;
+    color: white;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Pet detail page image */
+.pet-image {
+    width: 100%;
+    max-width: 400px;
+    height: 400px;
+    object-fit: cover; /* Crop image to fit without distortion */
+    border-radius: 15px;
+    margin: 2rem auto;
+    display: block;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Pet details list items (breed, age) */
+.content ul {
+    list-style: none;
+    margin-top: 1.5rem;
+}
+
+/* Individual list items in pet details */
+.content ul li {
+    background: #f8f9fa;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-radius: 8px;
+    font-size: 1.1rem;
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+    
+    nav ul {
+        flex-direction: column; /* Stack nav items vertically on mobile */
+        gap: 1rem;
+    }
+    
+    .content {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+}
+
+/* Footer section */
+footer {
+    background: white;
+    padding: 2rem;
+    text-align: center;
+    margin-top: 0;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    font-size: 1rem;
+}
+
+footer p {
+    margin: 0.5rem 0;
     color: #555;
 }
 
-ul.pet-details {
-    font-size: 50px;
-    line-height: 150%;
-    list-style-type: none;
-    margin-top: 20px;
-    padding-left: 0;
+/* Links (a tags) inside footer */
+footer a {
+    color: #3498db;
+    text-decoration: none;
 }
 
-ul.pet-details li {
-    margin-bottom: 20px;
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Action buttons container on pet detail page */
+.pet-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+/* Adopt and Back button styles */
+.adopt-btn, .back-btn {
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Green adopt button */
+.adopt-btn {
+    background: #27ae60;
+    color: white;
+}
+
+.adopt-btn:hover {
+    background: #229954;
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0 5px 15px rgba(39,174,96,0.3);
+}
+
+/* Gray back button */
+.back-btn {
+    background: #95a5a6;
+    color: white;
+}
+
+.back-btn:hover {
+    background: #7f8c8d;
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0 5px 15px rgba(149,165,166,0.3);
 }

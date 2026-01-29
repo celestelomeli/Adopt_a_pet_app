@@ -3,24 +3,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
-   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Adopt a Pet{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
-    <header>My Pet Adoption</header>
-    <nav>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/animals/dogs">Dogs</a></li>
-            <li><a href="/animals/cats">Cats</a></li>
-            <li><a href="/animals/rabbits">Rabbits</a></li>
-        </ul>
-    </nav>
-    
-    <div class="content">
-        {% block content %}
-        {% endblock %}
+    <div class="page-wrapper">
+        <header>
+            <h1>Pet Adoption Center</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/animals/dogs">Dogs</a></li>
+                <li><a href="/animals/cats">Cats</a></li>
+                <li><a href="/animals/rabbits">Rabbits</a></li>
+            </ul>
+        </nav>
+        
+        <div class="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+        
+        <footer>
+            <p>Contact us: <a href="mailto:adopt@petcenter.com">adopt@petcenter.com</a> | Phone: (555) 123-4567</p>
+            <p>&copy; 2024 Pet Adoption Center</p>
+        </footer>
     </div>
 </body>
 </html>
