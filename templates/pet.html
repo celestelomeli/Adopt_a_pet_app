@@ -5,11 +5,15 @@
     
 
 {% block content %}
-    <h1>{{ selected_pet['name'] }}</h1>
+    <h1>Meet {{ selected_pet['name'] }}</h1>
     <img src="{{ url_for('static', filename='images/' + selected_pet['image_url']) }}" alt="{{ selected_pet['name'] }}" class="pet-image"/>
     <p>{{ selected_pet['description'] }}</p>
     <ul>
-        <li>breed: {{ selected_pet['breed'] }}</li>
-        <li>age: {{ selected_pet['age'] }}</li>
+        <li><strong>Breed:</strong> {{ selected_pet['breed'] }}</li>
+        <li><strong>Age:</strong> {{ selected_pet['age'] }} years old</li>
     </ul>
+    <div class="pet-actions">
+        <a href="mailto:adopt@petcenter.com?subject=Interested in {{ selected_pet['name'] }}" class="adopt-btn">Adopt Me!</a>
+        <a href="javascript:history.back()" class="back-btn">Back to List</a>
+    </div>
 {% endblock %}

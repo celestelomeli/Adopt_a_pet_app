@@ -1,5 +1,4 @@
-# Import modules and classes from Flask framework
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, abort
 import json
 
 # Create a Flask application instance 
@@ -21,7 +20,9 @@ def get_pet_data():
 #Define main page route
 @app.route('/')
 def index():
-  return render_template('index.html')
+  pet_data = load_pet_data()
+  total_pets = sum(len(pets) for pets in pet_data.values())
+  return render_template('index.html', total_pets=total_pets)
 
 # Define a route to display a list of animals of a specific type
 @app.route('/animals/<pet_type>')
@@ -44,13 +45,11 @@ def pet(pet_type, pet_id):
     # Get the list of pets of the specified pet_type
     pets_of_type = pet_data.get(pet_type, [])
     
-    # Check if the provided pet_id is within valid range
     if 0 <= pet_id < len(pets_of_type):
-        # Retrieve the selected pet based on pet_id
         selected_pet = pets_of_type[pet_id]
         return render_template('pet.html', selected_pet=selected_pet)
     else:
-        return "Pet not found"
+        abort(404)
 
 # Start Flask application when script is executed  
 if __name__ == '__main__':
