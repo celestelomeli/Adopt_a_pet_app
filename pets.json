@@ -5,14 +5,16 @@
         "image_url": "dog_image_url_1.jpg",
         "description": "A friendly and loyal companion who loves long walks and playing fetch. Great with families!",
         "breed": "Labrador Retriever",
-        "age": 3
+        "age": 3,
+        "gender": "Male"
       },
       {
         "name": "Charlie",
         "image_url": "dog_image_url_2.jpg",
         "description": "Playful and energetic pup who enjoys outdoor adventures and making new friends.",
         "breed": "Golden Retriever",
-        "age": 2
+        "age": 2,
+        "gender": "Male"
       }
     ],
     "cats": [
@@ -21,7 +23,8 @@
         "image_url": "cat_image_url_1.jpg",
         "description": "Curious and affectionate cat who loves to explore and cuddle. Perfect lap companion!",
         "breed": "Siamese",
-        "age": 1
+        "age": 1,
+        "gender": "Female"
       }
     ],
     "rabbits": [
@@ -30,7 +33,8 @@
         "image_url": "rabbit_image_url_1.jpg",
         "description": "Fluffy and energetic bunny who loves hopping around and munching on fresh veggies.",
         "breed": "Dutch",
-        "age": 0.5
+        "age": 1,
+        "gender": "Female"
       }
     ]
   }
